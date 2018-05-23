@@ -3,6 +3,7 @@ const playButton = document.querySelector(".play-button");
 const overlay = document.querySelector(".darken");
 const cube = document.querySelector(".svg-cube");
 const video = document.createElement("iframe");
+const triangle = document.querySelector(".svg-container");
 
 video.setAttribute("width", "300");
 video.setAttribute("height", "300");
@@ -75,3 +76,12 @@ function addOverlay() {
 playButton.addEventListener("click",buttAnimation);
 playButton.addEventListener("click",cubeAnimation);
 playButton.addEventListener("click",addOverlay);
+
+
+function shake(){
+triangle.classList.toggle("shake");
+}
+
+playButton.addEventListener("mouseenter",shake);
+playButton.addEventListener("mouseout",shake);
+playButton.addEventListener("click", function(){playButton.classList.toggle("hidden-animated")});

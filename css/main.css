@@ -434,5 +434,23 @@ iframe{
   100% {  opacity: 1;  }
 }
 
+@keyframes hidden-animated{
+  0%   {  opacity: 1;  }
+  100% {  opacity: 0;  }
+}
 
 
+@keyframes shake{
+  0%   {  transform: rotate(5deg);  }
+  25% { transform: rotate(0deg);   }
+  50% { transform: rotate(-5deg);   }
+  100% { transform: rotate(0deg);   }
+}
+
+.shake{
+  animation: shake 0.3s ease-in-out;
+}
+
+.hidden-animated{
+  animation: hidden-animated 1s ease-in-out forwards;
+}
