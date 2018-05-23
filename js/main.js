@@ -4,6 +4,7 @@ const overlay = document.querySelector(".darken");
 const cube = document.querySelector(".svg-cube");
 const video = document.createElement("iframe");
 const triangle = document.querySelector(".svg-container");
+const blocks = document.querySelectorAll(".block");
 
 video.setAttribute("width", "300");
 video.setAttribute("height", "300");
@@ -47,7 +48,8 @@ function cubeAnimation() {
     targets: '.svg-cube',
     rotate: {
       value: 180,
-      duration: 3500
+      duration: 1000,
+      delay:300
 
     },
     scale: {
@@ -85,3 +87,30 @@ triangle.classList.toggle("shake");
 playButton.addEventListener("mouseenter",shake);
 playButton.addEventListener("mouseout",shake);
 playButton.addEventListener("click", function(){playButton.classList.toggle("hidden-animated")});
+/*
+var z = 0;
+function revealBlocks(){
+  for(var i = 0; blocks.length > 0; i++){
+    blocks[i].classList.add("reveal-block");
+    blocks[i].style.animationDelay = z + "0.5s";
+    z+=0.25;
+  }
+}
+*/
+
+function revealBlocks() {
+  blocks[0].classList.add("reveal-block");
+  blocks[0].style.animationDelay = "0.15s";
+  blocks[1].classList.add("reveal-block");
+  blocks[1].style.animationDelay = "0.3s";
+  blocks[2].classList.add("reveal-block");
+  blocks[2].style.animationDelay = "0.45s";
+  blocks[3].classList.add("reveal-block");
+  blocks[3].style.animationDelay = "0.60s";
+  blocks[4].classList.add("reveal-block");
+  blocks[4].style.animationDelay = "0.75s";
+}
+
+
+
+revealBlocks();
